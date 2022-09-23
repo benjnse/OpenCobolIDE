@@ -1,6 +1,7 @@
 """
 System utility module (get system info, platform specific path,...).
 """
+import distro
 import locale
 import subprocess
 import functools
@@ -16,7 +17,7 @@ windows = platform.system() == 'Windows'
 darwin = platform.system() == 'Darwin'
 linux = platform.system() == 'Linux'
 if linux:
-    ubuntu = platform.linux_distribution()[0].lower() == 'ubuntu'
+    ubuntu = distro.linux_distribution()[0].lower() == 'ubuntu'
 else:
     ubuntu = False
 
